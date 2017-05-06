@@ -1,2 +1,28 @@
 # web-starter-kit
-EJS, webpack, PostCSS(cssnext), ESLint
+gulp.js, EJS, webpack, PostCSS(cssnext), ESLint
+
+## install modules
+```
+$ yarn
+```
+
+## edit EJS config
+`src/ejs/config.json`
+
+## start dev server
+```
+$ yarn dev
+```
+or
+```
+$ gulp
+```
+
+## build
+```
+$ yarn build
+```
+or
+```
+$ gulp build
+```
