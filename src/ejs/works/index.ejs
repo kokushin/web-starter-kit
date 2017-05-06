@@ -1,0 +1,29 @@
+<%
+  var pagetitle = 'works list'
+  var config = config
+%>
+<%- include('../_common/_head', {
+  pagetitle: pagetitle,
+  key: 'works',
+}) %>
+
+<%- include('../_component/_header') %>
+
+<main class="content">
+  <h2><%= pagetitle %></h2>
+
+  <% for (var i = 0; i < config.extension.worksList.length; i++) { %>
+
+  <article class="works-item">
+    <h3><a href="<%= config.extension.worksList[i].path %>"><%= config.extension.worksList[i].title %></a></h3>
+    <time><%= config.extension.worksList[i].date %></time>
+  </article>
+
+  <% } %>
+
+  <p><a href="/">back</a></p>
+</main>
+
+<%- include('../_component/_footer') %>
+
+<%- include('../_common/_foot') %>

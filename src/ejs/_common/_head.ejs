@@ -1,0 +1,14 @@
+<%
+  var config = config
+%>
+<!DOCTYPE html>
+<html lang="<%= config.default.lang %>">
+<head>
+  <meta charset="<%= config.default.charset %>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><% if (key !== 'index') { %><%= pagetitle + ' | ' %><% } %><%= config.default.title %></title>
+  <meta name="description" content="<%= config.default.description %>">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="page-<%= key %>">

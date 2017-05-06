@@ -1,9 +1,31 @@
 {
-  "lang": "ja",
-  "charset": "UTF-8",
-  "title": "Hello",
-  "description": "Et consectetur tempor amet ullamco et.",
-  "keywords": "",
-  "author": "",
-  "publicPath": "http://localhost:8080"
+  "default": {
+    "lang": "ja",
+    "charset": "UTF-8",
+    "title": "website",
+    "description": "Et consectetur tempor amet ullamco et.",
+    "keywords": "",
+    "author": "",
+    "publicPath": "http://localhost:8080",
+    "analytics": ""
+  },
+  "extension": {
+    "worksList": [
+      {
+        "title": "hello",
+        "date": "2017/01/01",
+        "path": "/works/hello.html"
+      },
+      {
+        "title": "dummy",
+        "date": "2017/01/02",
+        "path": "#"
+      },
+      {
+        "title": "dummy",
+        "date": "2017/01/03",
+        "path": "#"
+      }
+    ]
+  }
 }

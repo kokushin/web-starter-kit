@@ -3,11 +3,22 @@
 }
 
 body {
-  padding: 40px;
+  padding: 20px 40px;
 }
 
-h1 {
-  font-size: calc(var(--fontSize) * 2);
+header {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 40px;
+  & h1 {
+    font-size: calc(var(--fontSize) * 2);
+  }
+}
+
+.works-item {
+  padding: 20px;
+  & h3 {
+    margin-top: 0;
+  }
 }
 
 p {

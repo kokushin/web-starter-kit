@@ -36,6 +36,11 @@ const _config = {
     port: 8080,
     ghostMode: false,
     notify: false,
+  },
+  minify: {
+    html: true,
+    js: true,
+    css: true,
   }
 }
 
@@ -107,7 +112,10 @@ gulp.task('default', ['html', 'js', 'css', 'serve'])
 
 /* clean */
 gulp.task('clean', () => {
-  return del(_config.path.dist)
+  return del([
+    `${_config.path.public}/**/*.ejs`,
+    _config.path.dist
+  ])
 })
 
 /* copy */
@@ -121,6 +129,9 @@ gulp.task('copy', () => {
 
 /* minify html */
 gulp.task('minifyHtml', () => {
+  if (!_config.minify.html) {
+    return
+  }
   return gulp
     .src(`${_config.path.dist}/**/*.html`)
     .pipe(htmlmin({
@@ -131,6 +142,9 @@ gulp.task('minifyHtml', () => {
 
 /* minify js */
 gulp.task('minifyJs', () => {
+  if (!_config.minify.js) {
+    return
+  }
   return gulp
     .src(`${_config.path.dist}/**/*.js`)
     .pipe(uglify({
@@ -141,6 +155,9 @@ gulp.task('minifyJs', () => {
 
 /* minify css */
 gulp.task('minifyCss', () => {
+  if (!_config.minify.css) {
+    return
+  }
   return gulp
     .src(`${_config.path.dist}/**/*.css`)
     .pipe(cssmin())

@@ -1,10 +1,23 @@
 body {
-  padding: 40px;
+  padding: 20px 40px;
 }
 
-h1 {
+header {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 40px
+}
+
+header h1 {
   font-size: 32px;
   font-size: 2rem;
+}
+
+.works-item {
+  padding: 20px
+}
+
+.works-item h3 {
+  margin-top: 0;
 }
 
 p {
