@@ -6,9 +6,38 @@
 <head>
   <meta charset="<%= config.default.charset %>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title><% if (key !== 'index') { %><%= pagetitle + ' | ' %><% } %><%= config.default.title %></title>
+  <link rel="canonical" href="<%= config.default.publicPath %>">
   <meta name="description" content="<%= config.default.description %>">
+  <meta name="author" content="<%= config.default.author %>">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="<%= config.default.title %>">
+  <meta property="og:title" content="<% if (key !== 'index') { %><%= pagetitle + ' | ' %><% } %><%= config.default.title %>">
+  <meta property="og:description" content="<%= config.default.description %>">
+  <meta property="og:url" content="<%= config.default.publicPath %>">
+  <meta property="og:image" content="<%= config.default.publicPath %>/assets/img/share/facebook.png">
+  <meta name="twitter:site" content="<%= config.default.twitter %>">
+  <meta name="twitter:creator" content="<%= config.default.twitter %>">
+  <meta name="twitter:url" content="<%= config.default.publicPath %>">
+  <meta name="twitter:title" content="<% if (key !== 'index') { %><%= pagetitle + ' | ' %><% } %><%= config.default.title %>">
+  <meta name="twitter:description" content="<%= config.default.description %>">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="<%= config.default.publicPath %>/assets/img/share/twitter.png">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="<%= config.default.title %>">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/share/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/share/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/share/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/share/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/share/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/share/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/share/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/share/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/share/apple-touch-icon-180x180.png">
+  <link rel="icon" sizes="32x32" type="image/png" href="/assets/share/favicon-32x32.png">
+  <link rel="shortcut icon" href="/assets/share/favicon.ico">
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body class="page-<%= key %>">

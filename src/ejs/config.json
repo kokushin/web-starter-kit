@@ -5,9 +5,12 @@
     "title": "website",
     "description": "Et consectetur tempor amet ullamco et.",
     "keywords": "",
-    "author": "",
+    "author": "kokushin",
     "publicPath": "http://localhost:8080",
-    "analytics": ""
+    "analytics": "",
+    "twitter": "@kokushing",
+    "facebook": "",
+    "instagram": ""
   },
   "extension": {
     "worksList": [
