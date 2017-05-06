@@ -1,0 +1,15 @@
+body {
+  padding: 40px;
+}
+
+h1 {
+  font-size: 32px;
+  font-size: 2rem;
+}
+
+p {
+  /* autoprefixer test */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}

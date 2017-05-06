@@ -1,0 +1,16 @@
+:root {
+  --fontSize: 1rem;
+}
+
+body {
+  padding: 40px;
+}
+
+h1 {
+  font-size: calc(var(--fontSize) * 2);
+}
+
+p {
+  /* autoprefixer test */
+  display: flex;
+}
