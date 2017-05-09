@@ -7,7 +7,7 @@ $ yarn
 ```
 
 ## edit EJS config
-`src/ejs/config.json`
+`src/ejs/_config.json`
 
 ## start dev server
 ```

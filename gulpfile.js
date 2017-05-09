@@ -46,7 +46,7 @@ const _config = {
 
 /* generate html files */
 gulp.task('html', () => {
-  const configFile = `${_config.path.src.ejs}/config.json`
+  const configFile = `${_config.path.src.ejs}/_config.json`
   const config = JSON.parse(fs.readFileSync(configFile, 'utf8'))
   return gulp.src(
     [
