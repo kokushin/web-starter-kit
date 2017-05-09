@@ -5,6 +5,10 @@ gulp.js, EJS, webpack, PostCSS(cssnext), ESLint
 ```
 $ yarn
 ```
+or
+```
+$ npm install
+```
 
 ## edit EJS config
 `src/ejs/_config.json`
