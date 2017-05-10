@@ -103,6 +103,7 @@ gulp.task('css', () => {
 gulp.task('serve', ['css'], () => {
   browserSync.init(_config.browserSync)
   gulp.watch(`${_config.path.src.ejs}/**/*.ejs`, ['html-reload'])
+  gulp.watch(`${_config.path.src.ejs}/_config.json`, ['html-reload'])
   gulp.watch(`${_config.path.src.js}/**/*.js`, ['js-reload'])
   gulp.watch(`${_config.path.src.css}/**/*.css`, ['css'])
 })
