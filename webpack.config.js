@@ -6,14 +6,14 @@ module.exports = {
     filename: '[name].js'
   },
   resolve: {
-    extensions: ['.webpack.js', '.js', '.ejs', '.css']
+    extensions: ['.js', '.ejs', '.css']
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader']
+        loader: ['babel-loader', 'eslint-loader'],
+        exclude: /node_modules/
       },
     ]
   }
