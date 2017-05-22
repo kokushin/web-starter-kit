@@ -18,6 +18,9 @@ const cssmin = require('gulp-cssmin')
 const uglify = require('gulp-uglify')
 
 const _config = {
+  inputFileName: {
+    js: 'entry.js'
+  },
   outputFileName: {
     css: 'style.css',
     js: 'common.js',
@@ -71,8 +74,9 @@ gulp.task('html-reload', ['html'], (done) => {
 
 /* generate javascript files */
 gulp.task('js', () => {
-  return webpackStream(webpackConfig, webpack)
+  return gulp.src(`${_config.path.src.js}/${_config.inputFileName}`)
     .pipe(plumber())
+    .pipe(webpackStream(webpackConfig, webpack))
     .pipe(rename(_config.outputFileName.js))
     .pipe(gulp.dest(`${_config.path.public}/assets/js`))
 })
