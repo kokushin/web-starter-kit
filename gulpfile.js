@@ -135,39 +135,36 @@ gulp.task('copy', () => {
 
 /* minify html */
 gulp.task('minifyHtml', () => {
-  if (!_config.minify.html) {
-    return
+  if (_config.minify.html) {
+    return gulp
+      .src(`${_config.path.dist}/**/*.html`)
+      .pipe(htmlmin({
+        collapseWhitespace: true
+      }))
+      .pipe(gulp.dest(_config.path.dist))
   }
-  return gulp
-    .src(`${_config.path.dist}/**/*.html`)
-    .pipe(htmlmin({
-      collapseWhitespace: true
-    }))
-    .pipe(gulp.dest(_config.path.dist))
 })
 
 /* minify js */
 gulp.task('minifyJs', () => {
-  if (!_config.minify.js) {
-    return
+  if (_config.minify.js) {
+    return gulp
+      .src(`${_config.path.dist}/**/*.js`)
+      .pipe(uglify({
+        preserveComments: 'some'
+      }))
+      .pipe(gulp.dest(_config.path.dist))
   }
-  return gulp
-    .src(`${_config.path.dist}/**/*.js`)
-    .pipe(uglify({
-      preserveComments: 'some'
-    }))
-    .pipe(gulp.dest(_config.path.dist))
 })
 
 /* minify css */
 gulp.task('minifyCss', () => {
-  if (!_config.minify.css) {
-    return
+  if (_config.minify.css) {
+    return gulp
+      .src(`${_config.path.dist}/**/*.css`)
+      .pipe(cssmin())
+      .pipe(gulp.dest(_config.path.dist))
   }
-  return gulp
-    .src(`${_config.path.dist}/**/*.css`)
-    .pipe(cssmin())
-    .pipe(gulp.dest(_config.path.dist))
 })
 
 /* build */
