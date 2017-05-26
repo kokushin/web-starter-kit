@@ -35,6 +35,7 @@ const _config = {
     dist: './dist',
   },
   browserSync: {
+    open: false,
     server: './public',
     port: 8080,
     ghostMode: false,
