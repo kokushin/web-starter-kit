@@ -26,3 +26,8 @@ p {
   display: -ms-flexbox;
   display: flex;
 }
+
+div {
+  /* inline comment test */
+  display: block;
+}

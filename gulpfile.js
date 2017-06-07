@@ -11,6 +11,7 @@ const postcss = require('gulp-postcss')
 const cssnext = require('postcss-cssnext')
 const atImport = require('postcss-import')
 const easings = require('postcss-easings')
+const inlineComment = require('postcss-inline-comment')
 const browserSync = require('browser-sync').create()
 const runSequence = require('run-sequence')
 const htmlmin = require('gulp-htmlmin')
@@ -94,6 +95,7 @@ gulp.task('css', () => {
     atImport(),
     easings(),
     cssnext(),
+    inlineComment(),
   ]
   return gulp
     .src(`${_config.path.src.css}/*.css`)

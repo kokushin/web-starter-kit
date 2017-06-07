@@ -25,3 +25,9 @@ p {
   /* autoprefixer test */
   display: flex;
 }
+
+div {
+  /* inline comment test */
+  display: block;
+  // display: none;
+}
