@@ -1,6 +1,9 @@
 # web-starter-kit
 gulp.js, EJS, webpack, PostCSS(cssnext), ESLint
 
+## Download
+[Source code (zip)](https://github.com/kokushin/web-starter-kit/releases/latest)
+
 ## install modules
 ```
 $ yarn
