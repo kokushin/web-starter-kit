@@ -81,24 +81,26 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Hello = function () {
-  function Hello() {
-    _classCallCheck(this, Hello);
+var Index = function () {
+  function Index() {
+    _classCallCheck(this, Index);
+
+    this.text = 'example';
 
     this._init();
   }
 
-  _createClass(Hello, [{
+  _createClass(Index, [{
     key: '_init',
     value: function _init() {
-      console.log('hello, wolrd!!');
+      console.log('hello, ' + this.text + ' wolrd!!');
     }
   }]);
 
-  return Hello;
+  return Index;
 }();
 
-exports.default = Hello;
+exports.default = Index;
 
 /***/ }),
 /* 1 */
@@ -107,13 +109,13 @@ exports.default = Hello;
 "use strict";
 
 
-var _hello = __webpack_require__(0);
+var _index = __webpack_require__(0);
 
-var _hello2 = _interopRequireDefault(_hello);
+var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-new _hello2.default();
+new _index2.default();
 
 /***/ })
 /******/ ]);

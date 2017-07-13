@@ -1,17 +1,5 @@
-:root {
-  --fontSize: 1rem;
-}
-
 body {
   padding: 20px 40px;
-}
-
-header {
-  border-bottom: 1px solid #eee;
-  margin-bottom: 40px;
-  & h1 {
-    font-size: calc(var(--fontSize) * 2);
-  }
 }
 
 .works-item {

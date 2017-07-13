@@ -1,32 +1,26 @@
-body {
-  padding: 20px 40px;
-}
-
 header {
   border-bottom: 1px solid #eee;
   margin-bottom: 40px
 }
-
 header h1 {
   font-size: 32px;
-  font-size: 2rem;
+  font-size: 2rem
 }
-
+body {
+  padding: 20px 40px;
+}
 .works-item {
   padding: 20px
 }
-
 .works-item h3 {
-  margin-top: 0;
+  margin-top: 0
 }
-
 p {
   /* autoprefixer test */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-
 div {
   /* inline comment test */
   display: block;
