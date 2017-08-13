@@ -1,26 +1,31 @@
 const gulp = require('gulp');
+const $ = require('gulp-load-plugins')();
 const fs = require('fs');
 const del = require('del');
-const plumber = require('gulp-plumber');
-const rename = require('gulp-rename');
-const ejs = require('gulp-ejs');
+const browserSync = require('browser-sync').create();
+const runSequence = require('run-sequence');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const webpackConfig = require('./webpack.config');
 const postcss = require('gulp-postcss');
-const cssnext = require('postcss-cssnext');
-const atImport = require('postcss-import');
-const easings = require('postcss-easings');
-const inlineComment = require('postcss-inline-comment');
-const browserSync = require('browser-sync').create();
-const runSequence = require('run-sequence');
-const htmlmin = require('gulp-htmlmin');
-const cssmin = require('gulp-cssmin');
-const uglify = require('gulp-uglify');
+const postcssSyntax = require('postcss-scss');
+const postcssPlugins = [
+  require('postcss-easy-import')(),
+  require('postcss-nested')(),
+  require('postcss-sassy-mixins')(),
+  require('postcss-assets')(),
+  require('postcss-advanced-variables')(),
+  require('postcss-calc')(),
+  require('postcss-easings')(),
+  require('postcss-strip-inline-comments')(),
+  require('css-mqpacker')(),
+  require('autoprefixer')(),
+];
 
 const _config = {
   inputFileName: {
-    js: '_import.js'
+    css: 'imports.css',
+    js: 'imports.js'
   },
   outputFileName: {
     css: 'style.css',
@@ -59,8 +64,8 @@ gulp.task('html', () => {
       `!${_config.path.src.ejs}/**/_*.ejs`,
     ]
   )
-  .pipe(plumber())
-  .pipe(ejs({
+  .pipe($.plumber())
+  .pipe($.ejs({
     config: config,
   }, {}, {
     ext: '.html'
@@ -76,10 +81,10 @@ gulp.task('html-reload', ['html'], (done) => {
 
 /* generate javascript files */
 gulp.task('js', () => {
-  return gulp.src(`${_config.path.src.js}/${_config.inputFileName}`)
-    .pipe(plumber())
+  return gulp.src(`${_config.path.src.js}/${_config.inputFileName.js}`)
+    .pipe($.plumber())
     .pipe(webpackStream(webpackConfig, webpack))
-    .pipe(rename(_config.outputFileName.js))
+    .pipe($.rename(_config.outputFileName.js))
     .pipe(gulp.dest(`${_config.path.public}/assets/js`));
 });
 
@@ -91,17 +96,11 @@ gulp.task('js-reload', ['js'], (done) => {
 
 /* generate css files */
 gulp.task('css', () => {
-  const plugins = [
-    atImport(),
-    easings(),
-    cssnext(),
-    inlineComment(),
-  ];
   return gulp
-    .src(`${_config.path.src.css}/_import.css`)
-    .pipe(plumber())
-    .pipe(postcss(plugins))
-    .pipe(rename(_config.outputFileName.css))
+    .src(`${_config.path.src.css}/${_config.inputFileName.css}`)
+    .pipe($.plumber())
+    .pipe(postcss(postcssPlugins, {syntax: postcssSyntax}))
+    .pipe($.rename(_config.outputFileName.css))
     .pipe(gulp.dest(`${_config.path.public}/assets/css`))
     .pipe(browserSync.stream());
 });
@@ -140,7 +139,7 @@ gulp.task('minifyHtml', () => {
   if (_config.minify.html) {
     return gulp
       .src(`${_config.path.dist}/**/*.html`)
-      .pipe(htmlmin({
+      .pipe($.htmlmin({
         collapseWhitespace: true
       }))
       .pipe(gulp.dest(_config.path.dist));
@@ -152,7 +151,7 @@ gulp.task('minifyJs', () => {
   if (_config.minify.js) {
     return gulp
       .src(`${_config.path.dist}/**/*.js`)
-      .pipe(uglify({
+      .pipe($.uglify({
         preserveComments: 'some'
       }))
       .pipe(gulp.dest(_config.path.dist));
@@ -164,7 +163,7 @@ gulp.task('minifyCss', () => {
   if (_config.minify.css) {
     return gulp
       .src(`${_config.path.dist}/**/*.css`)
-      .pipe(cssmin())
+      .pipe($.cssmin())
       .pipe(gulp.dest(_config.path.dist));
   }
 });

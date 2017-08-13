@@ -1,0 +1,11 @@
+@mixin btn() {
+  color: $base-txt-color;
+  padding: 16px 24px;
+  font-size: .875rem;
+  font-weight: bold;
+  background-color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.btn { @include btn }

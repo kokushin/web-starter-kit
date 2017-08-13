@@ -1,0 +1,21 @@
+/**
+ * 1. bases
+ */
+@import "variables";
+@import "mixins";
+@import "reset";
+
+/**
+ * 2. modules
+ */
+@import "modules/button";
+
+/**
+ * 3. components
+ */
+@import "components/header";
+
+/**
+ * 4. pages
+ */
+@import "pages/index";

@@ -1,21 +1,3 @@
-body {
-  padding: 20px 40px;
-}
-
-.works-item {
-  padding: 20px;
-  & h3 {
-    margin-top: 0;
-  }
-}
-
-p {
-  /* autoprefixer test */
-  display: flex;
-}
-
-div {
-  /* inline comment test */
-  display: block;
-  // display: none;
+.content {
+  /* override page styles */
 }

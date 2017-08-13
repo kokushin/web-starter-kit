@@ -1,12 +1,12 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
-  entry: './src/js/_import.js',
+  entry: './src/js/imports.js',
   output: {
     filename: '[name].js'
   },
   resolve: {
-    extensions: ['.js', '.ejs', '.css']
+    extensions: ['.js', '.ejs', '.scss', '.css']
   },
   module: {
     rules: [
@@ -17,4 +17,4 @@ module.exports = {
       },
     ]
   }
-}
+};
