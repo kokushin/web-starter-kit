@@ -1,12 +1,12 @@
 const path = require('path')
 
 module.exports = {
-  entry: './src/js/_import.js',
+  entry: './src/js/import.js',
   output: {
     filename: '[name].js'
   },
   resolve: {
-    extensions: ['.js', '.ejs', '.css']
+    extensions: ['.js', '.css']
   },
   module: {
     rules: [

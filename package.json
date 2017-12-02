@@ -1,6 +1,6 @@
 {
   "name": "web-starter-kit",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "scripts": {
     "dev": "gulp",
     "build": "gulp build"
@@ -17,17 +17,14 @@
     "eslint": "^3.19.0",
     "eslint-loader": "^1.7.1",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
     "gulp-cssmin": "^0.1.7",
     "gulp-ejs": "^3.0.1",
     "gulp-htmlmin": "^3.0.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^6.4.0",
     "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
     "gulp-uglify": "^2.1.2",
-    "postcss-cssnext": "^2.10.0",
-    "postcss-easings": "^0.3.0",
-    "postcss-import": "^9.1.0",
-    "postcss-inline-comment": "^3.0.0",
     "run-sequence": "^1.2.2",
     "webpack": "^2.5.0",
     "webpack-stream": "^3.2.0"
