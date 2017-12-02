@@ -20,7 +20,7 @@ const uglify = require('gulp-uglify');
 const _config = {
   inputFileName: {
     js: 'import.js',
-    css: 'import.css',
+    css: 'import.scss',
   },
   outputFileName: {
     css: 'style.css',
