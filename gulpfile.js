@@ -60,6 +60,11 @@ gulp.task('html', () => {
   fs.access(configFile, fs.R_OK | fs.W_OK, function (err) {
     const config = (err) ? {} : JSON.parse(fs.readFileSync(configFile, 'utf8'));
 
+    const onError = function (err) {
+      log.error(err);
+      this.emit('end');
+    };
+
     return gulp.src(
       [
         `${_config.path.src.ejs}/**/*.ejs`,
@@ -71,7 +76,7 @@ gulp.task('html', () => {
       config: config,
     }, {}, {
       ext: '.html'
-    }))
+    }).on('error', onError))
     .pipe(gulp.dest(`${_config.path.public}`));
   });
 });
