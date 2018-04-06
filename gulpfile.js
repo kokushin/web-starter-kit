@@ -3,6 +3,7 @@
 const gulp = require('gulp');
 const fs = require('fs');
 const del = require('del');
+const log = require('fancy-log');
 const plumber = require('gulp-plumber');
 const rename = require('gulp-rename');
 const ejs = require('gulp-ejs');
@@ -60,7 +61,7 @@ gulp.task('html', () => {
   fs.access(configFile, fs.R_OK | fs.W_OK, function (err) {
     const config = (err) ? {} : JSON.parse(fs.readFileSync(configFile, 'utf8'));
 
-    const onError = function (err) {
+    const onError = (err) => {
       log.error(err);
       this.emit('end');
     };
