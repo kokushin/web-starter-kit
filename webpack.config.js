@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   entry: './src/js/import.js',
@@ -17,4 +17,4 @@ module.exports = {
       },
     ]
   }
-}
+};

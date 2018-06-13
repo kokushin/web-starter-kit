@@ -1,6 +1,6 @@
 {
   "name": "web-starter-kit",
-  "version": "1.0.4",
+  "version": "1.0.8",
   "scripts": {
     "dev": "gulp",
     "build": "gulp build"
@@ -16,6 +16,7 @@
     "del": "^2.2.2",
     "eslint": "^3.19.0",
     "eslint-loader": "^1.7.1",
+    "fancy-log": "^1.3.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-cssmin": "^0.1.7",
@@ -25,11 +26,9 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^2.1.2",
+    "gulp-watch": "^5.0.0",
     "run-sequence": "^1.2.2",
     "webpack": "^2.5.0",
     "webpack-stream": "^3.2.0"
-  },
-  "dependencies": {
-    "fancy-log": "^1.3.2"
   }
 }

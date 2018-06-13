@@ -6,6 +6,7 @@ const del = require('del');
 const log = require('fancy-log');
 const plumber = require('gulp-plumber');
 const rename = require('gulp-rename');
+const watch = require('gulp-watch');
 const ejs = require('gulp-ejs');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
@@ -116,12 +117,20 @@ gulp.task('css', () => {
 });
 
 /* serve */
-gulp.task('serve', ['css'], () => {
+gulp.task('serve', () => {
   browserSync.init(_config.browserSync);
-  gulp.watch(`${_config.path.src.ejs}/**/*.ejs`, ['html-reload']);
-  gulp.watch(`${_config.path.src.ejs}/_config.json`, ['html-reload']);
-  gulp.watch(`${_config.path.src.js}/**/*.js`, ['js-reload']);
-  gulp.watch(`${_config.path.src.css}/**/*.scss`, ['css']);
+  watch([`${_config.path.src.ejs}/**/*.ejs`], () => {
+    return gulp.start(['html-reload']);
+  });
+  watch([`${_config.path.src.ejs}/_config.json`], () => {
+    return gulp.start(['html-reload']);
+  });
+  watch([`${_config.path.src.js}/**/*.js`], () => {
+    return gulp.start(['js-reload']);
+  });
+  watch([`${_config.path.src.css}/**/*.scss`], () => {
+    return gulp.start(['css']);
+  });
 });
 
 /* default task */
