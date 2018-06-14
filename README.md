@@ -1,5 +1,5 @@
 # web-starter-kit
-gulp.js, EJS, webpack, PostCSS(cssnext), ESLint
+gulp.js, EJS, webpack, SCSS, ESLint
 
 ## Download
 [Latest release](https://github.com/kokushin/web-starter-kit/releases/latest)
