@@ -39,3 +39,5 @@ dist
 
 # build
 dist
+public/assets/css/style.css
+public/assets/js/common.js

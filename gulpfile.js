@@ -62,23 +62,23 @@ gulp.task('html', () => {
   fs.access(configFile, fs.R_OK | fs.W_OK, function (err) {
     const config = (err) ? {} : JSON.parse(fs.readFileSync(configFile, 'utf8'));
 
-    const onError = (err) => {
-      log.error(err);
-      this.emit('end');
-    };
-
     return gulp.src(
       [
         `${_config.path.src.ejs}/**/*.ejs`,
         `!${_config.path.src.ejs}/**/_*.ejs`,
       ]
     )
-    .pipe(plumber())
+    .pipe(plumber({
+      errorHandler: function (_err) {
+        log.error(_err);
+        this.emit('end');
+      }
+    }))
     .pipe(ejs({
       config: config,
     }, {}, {
       ext: '.html'
-    }).on('error', onError))
+    }))
     .pipe(gulp.dest(`${_config.path.public}`));
   });
 });
