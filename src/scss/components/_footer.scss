@@ -1,12 +1,16 @@
 .footer {
-
+  padding: 8rem 0;
 }
 .footer__nav {
-
+  display: flex;
+  align-items: center;
 }
 .footer__nav-item {
-
+  &:not(:first-child) {
+    margin-left: 1rem;
+  }
 }
 .footer__copyright {
-
+  display: block;
+  margin-top: 2rem;
 }

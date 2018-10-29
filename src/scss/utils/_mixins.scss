@@ -1,0 +1,17 @@
+@mixin screen-small {
+  @media screen and (max-widh: $base-breakpoint-small - 1) {
+    @content;
+  }
+}
+
+@mixin screen-medium {
+  @media screen and (min-widh: $base-breakpoint-small) and (max-widh: $base-breakpoint-medium - 1) {
+    @content;
+  }
+}
+
+@mixin screen-large {
+  @media screen and (min-widh: $base-breakpoint-medium) and (max-widh: $base-breakpoint-large - 1) {
+    @content;
+  }
+}

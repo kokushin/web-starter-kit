@@ -1,3 +1,11 @@
 .intro {
   background-color: #f9f9f9;
 }
+
+.intro__content > * + * {
+  margin-top: 4rem;
+}
+
+.intro__content p {
+  line-height: 1.8;
+}

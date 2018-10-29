@@ -345,3 +345,79 @@ template {
 .body {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
 }
+
+.content {
+  position: relative;
+}
+
+.footer {
+  padding: 8rem 0;
+}
+
+.footer__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.footer__nav-item:not(:first-child) {
+  margin-left: 1rem;
+}
+
+.footer__copyright {
+  display: block;
+  margin-top: 2rem;
+}
+
+.header {
+  padding: 2rem 0;
+}
+
+.header > .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.header__logo {
+  margin: 0;
+}
+
+.header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.header__nav-item:not(:first-child) {
+  margin-left: 1rem;
+}
+
+.inner {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  padding: 4rem 0;
+  position: relative;
+}
+
+.section__title {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  margin-bottom: 4rem;
+}

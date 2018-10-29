@@ -81,19 +81,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/pages/top.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/entries/top.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/pages/top.js":
-/*!*****************************!*\
-  !*** ./src/js/pages/top.js ***!
-  \*****************************/
+/***/ "./src/js/entries/top.js":
+/*!*******************************!*\
+  !*** ./src/js/entries/top.js ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar Top =\n/*#__PURE__*/\nfunction () {\n  function Top() {\n    _classCallCheck(this, Top);\n\n    this.init();\n  }\n\n  _createClass(Top, [{\n    key: \"init\",\n    value: function init() {\n      this.sayHello();\n    }\n  }, {\n    key: \"sayHello\",\n    value: function sayHello() {\n      console.log('hello, top');\n    }\n  }]);\n\n  return Top;\n}();\n\nvar top = new Top();\n\n//# sourceURL=webpack:///./src/js/pages/top.js?");
+eval("function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar Top =\n/*#__PURE__*/\nfunction () {\n  function Top() {\n    _classCallCheck(this, Top);\n\n    this.init();\n  }\n\n  _createClass(Top, [{\n    key: \"init\",\n    value: function init() {\n      this.sayHello();\n    }\n  }, {\n    key: \"sayHello\",\n    value: function sayHello() {\n      console.log('hello, top');\n    }\n  }]);\n\n  return Top;\n}();\n\nvar top = new Top();\n\n//# sourceURL=webpack:///./src/js/entries/top.js?");
 
 /***/ })
 

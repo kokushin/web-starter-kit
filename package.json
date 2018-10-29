@@ -25,9 +25,13 @@
     "gulp-eslint": "^5.0.0",
     "gulp-plumber": "^1.2.0",
     "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.0.9",
     "gulp-watch": "^5.0.1",
     "run-sequence": "^2.2.1",
     "webpack": "^4.23.1",
     "webpack-stream": "^5.1.1"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.0"
   }
 }

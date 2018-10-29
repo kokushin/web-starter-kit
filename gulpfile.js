@@ -3,6 +3,7 @@ const del = require('del');
 const watch = require('gulp-watch');
 const plumber = require('gulp-plumber');
 const sass = require('gulp-sass');
+const sassGlob = require('gulp-sass-glob');
 const autoprefixer = require('gulp-autoprefixer');
 const webpack = require('webpack-stream');
 const browserSync = require('browser-sync').create();
@@ -12,7 +13,7 @@ const cssmin = require('gulp-cssmin');
 const options = {
   SRC_PATH: './src',
   PUBLIC_PATH: './public',
-  BUILD_PATH: './build',
+  BUILD_PATH: './dist',
   AUTOPREFIXER: {
     browsers: ['last 2 versions'],
     cascade: false
@@ -26,8 +27,8 @@ const options = {
   },
   WEBPACK: {
     entry: {
-      'common': './src/js/pages/common.js',
-      'top': './src/js/pages/top.js',
+      'common': './src/js/entries/common.js',
+      'top': './src/js/entries/top.js',
     },
     output: {
       filename: '[name].js'
@@ -55,7 +56,7 @@ gulp.task('html-reload', ['html'], (done) => {
 });
 
 gulp.task('js', () => {
-  return gulp.src(`${options.SRC_PATH}/js/pages/**/*.js`)
+  return gulp.src(`${options.SRC_PATH}/js/entries/**/*.js`)
     .pipe(plumber())
     .pipe(webpack(Object.assign({}, options.WEBPACK, { mode: 'development' })))
     .pipe(gulp.dest(`${options.PUBLIC_PATH}/assets/js`));
@@ -67,7 +68,8 @@ gulp.task('js-reload', ['js'], (done) => {
 });
 
 gulp.task('scss', () => {
-  return gulp.src(`${options.SRC_PATH}/scss/pages/**/*.scss`)
+  return gulp.src(`${options.SRC_PATH}/scss/entries/**/*.scss`)
+    .pipe(sassGlob())
     .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
     .pipe(autoprefixer(options.AUTOPREFIXER))
     .pipe(gulp.dest(`${options.PUBLIC_PATH}/assets/css`))

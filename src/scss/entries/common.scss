@@ -1,6 +1,4 @@
-@import "../utils/variables";
-@import "../utils/mixins";
-@import "../utils/reset";
+@import "../utils/**";
 
 *,
 *:before,
@@ -11,3 +9,5 @@
 .body {
   font-family: $base-font-stack;
 }
+
+@import "../components/**";
