@@ -1,15 +1,8 @@
 class Top {
-  constructor() {
-    this.init();
-  }
-
-  init() {
-    this.sayHello();
-  }
-
-  sayHello() {
+  static sayHello() {
+    /* eslint-disable no-console */
     console.log('hello, top');
   }
 }
 
-const top = new Top();
+Top.sayHello();

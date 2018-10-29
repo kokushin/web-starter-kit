@@ -1,15 +1,8 @@
 class Common {
-  constructor() {
-    this.init();
-  }
-
-  init() {
-    this.sayHello();
-  }
-
-  sayHello() {
+  static sayHello() {
+    /* eslint-disable no-console */
     console.log('hello, common');
   }
 }
 
-const common = new Common();
+Common.sayHello();
